@@ -26,6 +26,26 @@ module.exports = {
           }
         ],
       },
+      {
+        test: /\.png|\.jpg/,
+        use: [
+          // {
+          //   loader: 'url-loader',
+          //   options: {
+          //     esModules: false,
+          //   }
+          // },
+          {
+            loader: 'file-loader',
+            options: {
+              esModules: false,
+              name: '[name].[ext]',
+              outputPath : './images/',
+              // publicPath : path => '../' + path,
+            },
+          },
+        ],
+      },
     ],
   },
   plugins: [
